@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The 3-Second Rule: How Slow Websites Kill Your Leads | Eder Sula</title>
+  <meta name="description" content="Every extra second your site takes to load costs you customers. Here's the simple fix most businesses are missing entirely.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #15141a; --bg-2: #1b1a21; --surface: #22212a; --surface-2: #2a2934;
+      --border: rgba(255,255,255,0.09); --border-strong: rgba(255,255,255,0.18);
+      --text: #f4f3f8; --text-dim: #b0aec0; --text-muted: #7a7889;
+      --accent: #00e0ff; --accent-glow: #00b8d4; --accent-purple: #a77dff;
+      --glow: 0 0 24px rgba(0,224,255,0.35);
+      --mono: 'JetBrains Mono', monospace;
+      --sans: 'Inter', -apple-system, sans-serif;
+      --display: 'Space Grotesk', 'Inter', sans-serif;
+      --max-w: 780px; --transition: 0.35s cubic-bezier(0.4,0,0.2,1);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); font-size: 16px; line-height: 1.65; color: var(--text); background: var(--bg); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    body::before { content:''; position:fixed; top:-20%; left:-10%; width:600px; height:600px; background:radial-gradient(circle,rgba(0,224,255,0.07) 0%,transparent 70%); border-radius:50%; pointer-events:none; z-index:0; }
+    .grid-overlay { position:fixed; inset:0; background-image:linear-gradient(rgba(255,255,255,0.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.018) 1px,transparent 1px); background-size:56px 56px; mask-image:radial-gradient(ellipse at center,black 10%,transparent 85%); pointer-events:none; z-index:1; }
+    a { color:inherit; text-decoration:none; }
+    .container { max-width: var(--max-w); margin:0 auto; padding:0 32px; position:relative; z-index:2; }
+    .navbar { position:fixed; top:0; left:0; right:0; z-index:100; padding:20px 0; backdrop-filter:blur(16px); background:rgba(21,20,26,0.85); border-bottom:1px solid var(--border); }
+    .navbar .container { max-width:1240px; display:flex; align-items:center; justify-content:space-between; }
+    .logo { display:flex; align-items:center; gap:12px; font-family:var(--mono); font-weight:700; font-size:15px; letter-spacing:1px; }
+    .logo-mark { width:36px; height:36px; background:linear-gradient(135deg,var(--accent) 0%,var(--accent-glow) 100%); border-radius:8px; display:flex; align-items:center; justify-content:center; color:var(--bg); font-weight:800; font-family:var(--display); font-size:18px; box-shadow:0 4px 20px rgba(0,224,255,0.4); }
+    .logo-text span { color:var(--accent); }
+    .back-btn { font-family:var(--mono); font-size:12px; color:var(--text-dim); display:flex; align-items:center; gap:8px; text-transform:uppercase; letter-spacing:1px; transition:color var(--transition); }
+    .back-btn:hover { color:var(--accent); }
+    .article-wrap { padding:140px 0 100px; }
+    .article-meta { display:flex; align-items:center; gap:16px; margin-bottom:32px; flex-wrap:wrap; }
+    .meta-tag { font-family:var(--mono); font-size:11px; color:var(--accent); padding:6px 14px; background:rgba(0,224,255,0.07); border:1px solid rgba(0,224,255,0.22); border-radius:100px; text-transform:uppercase; letter-spacing:1px; }
+    .meta-date { font-family:var(--mono); font-size:12px; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px; }
+    .meta-read { font-family:var(--mono); font-size:12px; color:var(--text-muted); }
+    h1.article-title { font-family:var(--display); font-size:clamp(32px,5vw,52px); line-height:1.1; letter-spacing:-0.02em; font-weight:700; margin-bottom:24px; }
+    .article-subtitle { font-size:20px; color:var(--text-dim); line-height:1.7; margin-bottom:48px; padding-bottom:48px; border-bottom:1px solid var(--border); }
+    .article-body h2 { font-family:var(--display); font-size:28px; font-weight:700; margin:48px 0 16px; color:var(--text); }
+    .article-body p { color:var(--text-dim); font-size:17px; line-height:1.85; margin-bottom:24px; }
+    .article-body p strong { color:var(--text); font-weight:600; }
+    .article-body ul { margin:0 0 24px 0; padding-left:0; list-style:none; display:flex; flex-direction:column; gap:12px; }
+    .article-body ul li { color:var(--text-dim); font-size:17px; line-height:1.7; padding-left:24px; position:relative; }
+    .article-body ul li::before { content:'//'; position:absolute; left:0; color:var(--accent); font-family:var(--mono); font-size:12px; top:4px; }
+    .callout { background:var(--surface); border:1px solid rgba(0,224,255,0.2); border-left:3px solid var(--accent); border-radius:8px; padding:24px 28px; margin:36px 0; }
+    .callout p { color:var(--text); font-size:17px; margin:0; }
+    .stat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin:36px 0; }
+    .stat-box { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:24px; text-align:center; }
+    .stat-num { font-family:var(--display); font-size:36px; font-weight:700; background:linear-gradient(135deg,var(--accent),var(--accent-purple)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:8px; }
+    .stat-label { font-family:var(--mono); font-size:11px; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px; }
+    .article-cta { margin-top:64px; padding:48px; background:var(--surface); border:1px solid var(--border); border-radius:14px; text-align:center; position:relative; overflow:hidden; }
+    .article-cta::before { content:''; position:absolute; top:0; left:24px; right:24px; height:2px; background:linear-gradient(90deg,transparent,var(--accent),transparent); }
+    .article-cta h3 { font-family:var(--display); font-size:28px; margin-bottom:12px; }
+    .article-cta p { color:var(--text-dim); font-size:17px; margin-bottom:28px; }
+    .btn-primary { display:inline-flex; align-items:center; gap:10px; font-family:var(--mono); font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:1px; padding:17px 30px; border-radius:8px; background:linear-gradient(135deg,var(--accent) 0%,var(--accent-glow) 100%); color:var(--bg); border:none; box-shadow:0 4px 20px rgba(0,224,255,0.25); transition:all var(--transition); cursor:pointer; text-decoration:none; }
+    .btn-primary:hover { box-shadow:0 8px 40px rgba(0,224,255,0.5); transform:translateY(-2px); }
+    .footer { border-top:1px solid var(--border); padding:32px 0; background:var(--bg); position:relative; z-index:2; }
+    .footer .container { max-width:1240px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+    .footer-copy { font-family:var(--mono); font-size:12px; color:var(--text-muted); }
+    .footer-status { font-family:var(--mono); font-size:12px; color:var(--accent); display:flex; align-items:center; gap:8px; }
+    .footer-status::before { content:''; width:8px; height:8px; background:var(--accent); border-radius:50%; box-shadow:var(--glow); animation:pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.85)} }
+    @media(max-width:768px) { .container{padding:0 20px;} .stat-grid{grid-template-columns:1fr;} .article-cta{padding:32px 24px;} }
+  </style>
+</head>
+<body>
+  <div class="grid-overlay"></div>
+  <nav class="navbar">
+    <div class="container">
+      <a href="../index.html" class="logo">
+        <div class="logo-mark">E</div>
+        <div class="logo-text">EDER<span>.</span>SULA</div>
+      </a>
+      <a href="../index.html#journal" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Journal</a>
+    </div>
+  </nav>
+
+  <div class="article-wrap">
+    <div class="container">
+      <div class="article-meta">
+        <span class="meta-tag">Performance</span>
+        <span class="meta-tag">Web Speed</span>
+        <span class="meta-date">Mar 2026</span>
+        <span class="meta-read">// 7 min read</span>
+      </div>
+      <h1 class="article-title">The 3-Second Rule: How Slow Websites Kill Your Leads</h1>
+      <p class="article-subtitle">Every extra second your site takes to load costs you customers. Here's the simple fix most businesses are missing entirely.</p>
+
+      <div class="article-body">
+
+        <p>You've paid for ads. You've posted on social media. You've handed out business cards. Someone finally visits your website — and then they leave before it even loads. <strong>This is happening to your business right now, and most owners have no idea.</strong></p>
+
+        <p>Page speed isn't a technical detail that only developers care about. It's directly tied to how many phone calls you get, how many form submissions you receive, and how much revenue your website actually generates.</p>
+
+        <div class="stat-grid">
+          <div class="stat-box">
+            <div class="stat-num">53%</div>
+            <div class="stat-label">of mobile users leave if a page takes over 3 seconds</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">1s</div>
+            <div class="stat-label">delay in load time = 7% drop in conversions</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">2x</div>
+            <div class="stat-label">faster sites rank higher in Google search results</div>
+          </div>
+        </div>
+
+        <h2>What Actually Slows Websites Down</h2>
+
+        <p>Most slow small business websites have the same problems. They're not complicated to fix, but you need to know what to look for.</p>
+
+        <ul>
+          <li><strong>Unoptimized images</strong> — A photo taken on an iPhone is 4–8MB. A website image should be under 200KB. That single difference can make your site 5x faster.</li>
+          <li><strong>Too many plugins</strong> — WordPress sites with 20+ plugins are loading 20+ extra files on every page visit. Most of those plugins are doing almost nothing.</li>
+          <li><strong>Cheap shared hosting</strong> — If your site is on a $3/month hosting plan, your server is slow. Period. Hosting is not where you cut corners.</li>
+          <li><strong>No caching</strong> — Without caching, your server rebuilds every page from scratch every single time someone visits. With caching, it serves a pre-built version in milliseconds.</li>
+          <li><strong>Blocking fonts and scripts</strong> — Third-party fonts and JavaScript files that load before your page content will delay everything else from appearing.</li>
+        </ul>
+
+        <h2>The Real Cost of a Slow Website</h2>
+
+        <p>Let's make this concrete. Say your website gets 500 visitors a month from Google and social media. If your site loads in 5 seconds, roughly half of those visitors leave before they even see your business. That's 250 potential customers who never got the chance to contact you.</p>
+
+        <p>Even if only 10% of those people would have called you, that's 25 missed inquiries every month. For a trades company charging $500–$2,000 per job, a slow website could be costing you thousands of dollars monthly — and you'd never even know.</p>
+
+        <div class="callout">
+          <p>Google officially uses page speed as a ranking factor. A faster website doesn't just keep visitors — it brings in more visitors in the first place.</p>
+        </div>
+
+        <h2>How to Check Your Website Speed Right Now</h2>
+
+        <p>Go to <strong>pagespeed.web.dev</strong> and enter your website URL. Google will give you a score from 0–100 and a breakdown of exactly what's slowing your site down. Aim for 90+ on mobile. Anything under 70 is a problem that's actively costing you leads.</p>
+
+        <p>Pay attention to the "Largest Contentful Paint" metric — that's how long it takes for the main content of your page to appear. This should be under 2.5 seconds. If it's over 4 seconds, visitors are gone before they've read a single word.</p>
+
+        <h2>The Fix Is Simpler Than You Think</h2>
+
+        <p>For most small business websites, speed problems come down to three things: image sizes, hosting quality, and how the site was built. A modern, well-coded website built on clean HTML and CSS — without a bloated page builder or dozens of plugins — will load fast by default.</p>
+
+        <p>When I build websites for clients, speed is built in from day one, not bolted on afterward. Clean code, compressed images, async font loading, and proper hosting means every site I deliver hits 90+ on PageSpeed without extra effort. Because a fast website isn't a luxury feature — it's the bare minimum your customers deserve.</p>
+
+        <p><strong>If your website is slow, it's not just a technical problem. It's a revenue problem. And it's fixable.</strong></p>
+
+      </div>
+
+      <div class="article-cta">
+        <h3>Want a website that actually loads fast?</h3>
+        <p>Every site I build is optimized for speed from day one. Let's talk about what a modern, fast website could do for your business.</p>
+        <a href="../index.html#contact" class="btn-primary"><i class="fas fa-paper-plane"></i> Start a Project</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <span class="footer-copy">© 2026 EDER.SULA // Built in Toronto</span>
+      <span class="footer-status">CURRENTLY ACCEPTING PROJECTS</span>
+    </div>
+  </footer>
+</body>
+</html>
