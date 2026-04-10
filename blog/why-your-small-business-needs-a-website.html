@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why Your Small Business Still Needs a Website in 2026 | Eder Sula</title>
+  <meta name="description" content="Social media isn't enough on its own. Here's why a real website is the single highest-impact move most small business owners aren't making.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #15141a; --bg-2: #1b1a21; --surface: #22212a; --surface-2: #2a2934;
+      --border: rgba(255,255,255,0.09); --border-strong: rgba(255,255,255,0.18);
+      --text: #f4f3f8; --text-dim: #b0aec0; --text-muted: #7a7889;
+      --accent: #00e0ff; --accent-glow: #00b8d4; --accent-purple: #a77dff;
+      --glow: 0 0 24px rgba(0,224,255,0.35);
+      --mono: 'JetBrains Mono', monospace;
+      --sans: 'Inter', -apple-system, sans-serif;
+      --display: 'Space Grotesk', 'Inter', sans-serif;
+      --max-w: 780px; --transition: 0.35s cubic-bezier(0.4,0,0.2,1);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); font-size: 16px; line-height: 1.65; color: var(--text); background: var(--bg); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    body::before { content:''; position:fixed; top:-20%; left:-10%; width:600px; height:600px; background:radial-gradient(circle,rgba(0,224,255,0.07) 0%,transparent 70%); border-radius:50%; pointer-events:none; z-index:0; }
+    .grid-overlay { position:fixed; inset:0; background-image:linear-gradient(rgba(255,255,255,0.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.018) 1px,transparent 1px); background-size:56px 56px; mask-image:radial-gradient(ellipse at center,black 10%,transparent 85%); pointer-events:none; z-index:1; }
+    a { color:inherit; text-decoration:none; }
+    .container { max-width: var(--max-w); margin:0 auto; padding:0 32px; position:relative; z-index:2; }
+
+    /* NAV */
+    .navbar { position:fixed; top:0; left:0; right:0; z-index:100; padding:20px 0; backdrop-filter:blur(16px); background:rgba(21,20,26,0.85); border-bottom:1px solid var(--border); }
+    .navbar .container { max-width:1240px; display:flex; align-items:center; justify-content:space-between; }
+    .logo { display:flex; align-items:center; gap:12px; font-family:var(--mono); font-weight:700; font-size:15px; letter-spacing:1px; }
+    .logo-mark { width:36px; height:36px; background:linear-gradient(135deg,var(--accent) 0%,var(--accent-glow) 100%); border-radius:8px; display:flex; align-items:center; justify-content:center; color:var(--bg); font-weight:800; font-family:var(--display); font-size:18px; box-shadow:0 4px 20px rgba(0,224,255,0.4); }
+    .logo-text span { color:var(--accent); }
+    .back-btn { font-family:var(--mono); font-size:12px; color:var(--text-dim); display:flex; align-items:center; gap:8px; text-transform:uppercase; letter-spacing:1px; transition:color var(--transition); }
+    .back-btn:hover { color:var(--accent); }
+
+    /* ARTICLE */
+    .article-wrap { padding:140px 0 100px; }
+    .article-meta { display:flex; align-items:center; gap:16px; margin-bottom:32px; flex-wrap:wrap; }
+    .meta-tag { font-family:var(--mono); font-size:11px; color:var(--accent); padding:6px 14px; background:rgba(0,224,255,0.07); border:1px solid rgba(0,224,255,0.22); border-radius:100px; text-transform:uppercase; letter-spacing:1px; }
+    .meta-date { font-family:var(--mono); font-size:12px; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px; }
+    .meta-read { font-family:var(--mono); font-size:12px; color:var(--text-muted); }
+
+    h1.article-title { font-family:var(--display); font-size:clamp(32px,5vw,52px); line-height:1.1; letter-spacing:-0.02em; font-weight:700; margin-bottom:24px; }
+    .article-subtitle { font-size:20px; color:var(--text-dim); line-height:1.7; margin-bottom:48px; padding-bottom:48px; border-bottom:1px solid var(--border); }
+
+    .article-body h2 { font-family:var(--display); font-size:28px; font-weight:700; margin:48px 0 16px; color:var(--text); }
+    .article-body p { color:var(--text-dim); font-size:17px; line-height:1.85; margin-bottom:24px; }
+    .article-body p strong { color:var(--text); font-weight:600; }
+    .article-body ul { margin:0 0 24px 0; padding-left:0; list-style:none; display:flex; flex-direction:column; gap:12px; }
+    .article-body ul li { color:var(--text-dim); font-size:17px; line-height:1.7; padding-left:24px; position:relative; }
+    .article-body ul li::before { content:'//'; position:absolute; left:0; color:var(--accent); font-family:var(--mono); font-size:12px; top:4px; }
+
+    .callout { background:var(--surface); border:1px solid rgba(0,224,255,0.2); border-left:3px solid var(--accent); border-radius:8px; padding:24px 28px; margin:36px 0; }
+    .callout p { color:var(--text); font-size:17px; margin:0; }
+
+    /* CTA */
+    .article-cta { margin-top:64px; padding:48px; background:var(--surface); border:1px solid var(--border); border-radius:14px; text-align:center; position:relative; overflow:hidden; }
+    .article-cta::before { content:''; position:absolute; top:0; left:24px; right:24px; height:2px; background:linear-gradient(90deg,transparent,var(--accent),transparent); }
+    .article-cta h3 { font-family:var(--display); font-size:28px; margin-bottom:12px; }
+    .article-cta p { color:var(--text-dim); font-size:17px; margin-bottom:28px; }
+    .btn-primary { display:inline-flex; align-items:center; gap:10px; font-family:var(--mono); font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:1px; padding:17px 30px; border-radius:8px; background:linear-gradient(135deg,var(--accent) 0%,var(--accent-glow) 100%); color:var(--bg); border:none; box-shadow:0 4px 20px rgba(0,224,255,0.25); transition:all var(--transition); cursor:pointer; text-decoration:none; }
+    .btn-primary:hover { box-shadow:0 8px 40px rgba(0,224,255,0.5); transform:translateY(-2px); }
+
+    /* FOOTER */
+    .footer { border-top:1px solid var(--border); padding:32px 0; background:var(--bg); position:relative; z-index:2; }
+    .footer .container { max-width:1240px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+    .footer-copy { font-family:var(--mono); font-size:12px; color:var(--text-muted); }
+    .footer-status { font-family:var(--mono); font-size:12px; color:var(--accent); display:flex; align-items:center; gap:8px; }
+    .footer-status::before { content:''; width:8px; height:8px; background:var(--accent); border-radius:50%; box-shadow:var(--glow); animation:pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.85)} }
+
+    @media(max-width:768px) { .container{padding:0 20px;} .article-cta{padding:32px 24px;} }
+  </style>
+</head>
+<body>
+  <div class="grid-overlay"></div>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="../index.html" class="logo">
+        <div class="logo-mark">E</div>
+        <div class="logo-text">EDER<span>.</span>SULA</div>
+      </a>
+      <a href="../index.html#journal" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Journal</a>
+    </div>
+  </nav>
+
+  <div class="article-wrap">
+    <div class="container">
+
+      <div class="article-meta">
+        <span class="meta-tag">Business</span>
+        <span class="meta-tag">Web Presence</span>
+        <span class="meta-date">Apr 2026</span>
+        <span class="meta-read">// 5 min read</span>
+      </div>
+
+      <h1 class="article-title">Why Your Small Business Still Needs a Website in 2026</h1>
+      <p class="article-subtitle">Social media isn't enough on its own. Here's why a real website is the single highest-impact move most small business owners aren't making.</p>
+
+      <div class="article-body">
+
+        <p>I hear it all the time from small business owners across the GTA: <strong>"I have Instagram. I have Facebook. Do I really need a website?"</strong> And every time, my answer is the same — yes, absolutely, and here's exactly why.</p>
+
+        <p>Social media is a rented platform. You don't own your Instagram page. You don't control what Facebook shows your followers. Algorithms change overnight. Accounts get flagged or restricted without warning. Platforms disappear entirely — remember when everyone was on Vine? But your website? That's yours. You own it completely, and no algorithm can take it away.</p>
+
+        <h2>You Don't Own Your Social Media Audience</h2>
+
+        <p>When someone follows your business on Instagram, Instagram owns that relationship — not you. If Instagram decides tomorrow to show your posts to only 3% of your followers (which it already does), there's nothing you can do about it. You've built your house on rented land.</p>
+
+        <p>A website gives you a direct line to your customers. You collect their emails. You show up in Google searches. You control the experience from start to finish. No middleman, no algorithm, no monthly fee to "boost" your posts just to reach people who already said they wanted to hear from you.</p>
+
+        <h2>Google Can't Find Your Instagram Page Like It Can Find Your Website</h2>
+
+        <p>When someone in Vaughan searches "best contractor near me" or "barbershop open Sunday in Woodbridge," Google returns websites — not Instagram profiles. Local SEO is one of the most powerful free tools available to small businesses, and you can only take advantage of it if you have a real website.</p>
+
+        <p>Think about your own behaviour. When you need a plumber at 9pm on a Tuesday, you Google it. You click a website. You look at the work, check the number, and call. You don't scroll through someone's Instagram Reels to decide if you trust them with your burst pipe.</p>
+
+        <div class="callout">
+          <p>A study found that 97% of consumers search online before visiting a local business. If you don't have a website, you're invisible to almost all of them.</p>
+        </div>
+
+        <h2>First Impressions Happen Online Before They Happen in Person</h2>
+
+        <p>Before a potential customer calls you, emails you, or walks through your door — they've already Googled you. What they find in those first 10 seconds shapes their entire perception of your business. A professional website signals that you're established, credible, and serious. A Facebook page from 2019 with inconsistent posts signals the opposite.</p>
+
+        <p>Your website is your storefront, your salesperson, and your business card — all in one. And unlike a physical storefront, it's open 24 hours a day, 7 days a week, answering questions and generating leads while you sleep.</p>
+
+        <h2>Your Competitors Already Have One</h2>
+
+        <p>If you're a trades company in Mississauga, a salon in North York, or a restaurant in Woodbridge — your competitors have websites. Some of them have good ones. Every day you don't have a website, you're sending potential customers directly to them.</p>
+
+        <p>This isn't about keeping up with trends. It's about not leaving money on the table.</p>
+
+        <h2>What a Good Website Actually Does For You</h2>
+
+        <ul>
+          <li>Shows up in Google searches when local customers are looking for your services</li>
+          <li>Answers common questions so you spend less time on the phone explaining your business</li>
+          <li>Collects leads 24/7 through contact forms even when you're on a job or closed</li>
+          <li>Builds trust with professional design that matches the quality of your actual work</li>
+          <li>Gives you something to link to from your Google Business Profile, Instagram bio, and business cards</li>
+        </ul>
+
+        <h2>The Bottom Line</h2>
+
+        <p>Social media is a tool for staying visible and engaging your existing audience. A website is your foundation — it's where serious customers go when they're ready to actually spend money. You need both, but if you only have one, make it the website.</p>
+
+        <p>The good news? A well-built website doesn't have to be expensive or complicated. For most small businesses in the GTA, a clean, fast, mobile-friendly single-page site is all you need to start converting visitors into real customers. And it doesn't take months — it takes days.</p>
+
+        <p><strong>Your business deserves to be found. A website is how that happens.</strong></p>
+
+      </div>
+
+      <div class="article-cta">
+        <h3>Ready to get your business online?</h3>
+        <p>I build fast, modern websites for small businesses across the GTA. No tech talk, no hidden fees — just results.</p>
+        <a href="../index.html#contact" class="btn-primary"><i class="fas fa-paper-plane"></i> Start a Project</a>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <span class="footer-copy">© 2026 EDER.SULA // Built in Toronto</span>
+      <span class="footer-status">CURRENTLY ACCEPTING PROJECTS</span>
+    </div>
+  </footer>
+
+</body>
+</html>
